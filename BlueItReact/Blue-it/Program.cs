@@ -1,3 +1,5 @@
+using Blue_it.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,7 +18,46 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.MapGet("/api/questions", async () => await QuestionRepository.GetQuestionsAsync());
+app.MapGet("/api/question/{questionId}", async (int questionId) => 
+{
+    Question question = await QuestionRepository.GetQuestionByIdAsync(questionId);
+    if(question != null)
+    {
+        return Results.Ok(question);
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
 
+});
+app.MapPost("/api/add-new-question", async (Question questionToCreate) =>
+{
+    bool Successful = await QuestionRepository.AddNewQuestionAsync(questionToCreate);
+    if (Successful)
+    {
+        return Results.Ok(questionToCreate);
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+});
+app.MapPut("/api/update-question", async (Question question) =>
+{
+    bool Successful = await QuestionRepository.AddNewQuestionAsync(question);
+    if (Successful)
+    {
+        return Results.Ok("Update Successful");
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+});
+
+    
 
 app.Run();
 
