@@ -1,0 +1,16 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Blue_it.Data
+{
+    public class Comment
+    {
+        [Key]
+        public int Id { get; set; }
+        public int AnswerId { get; set; }
+        [Required]
+        public string? Message { get; set; }
+        public DateTime SubmissionTime { get; set; } = DateTime.Now;
+        public int EditedCount { get; set; } = 0;
+
+    }
+}
