@@ -117,6 +117,35 @@ app.MapDelete("/api/delete-comment/{commentId}", async (int commentId) =>
         return Results.BadRequest();
     }
 });
+app.MapPost("/api/add-new-comment", async (Comment commentToCreate) =>
+{
+    bool Successful = await CommentRepository.AddNewCommentAsync(commentToCreate);
+    if (Successful)
+    {
+        return Results.Ok(commentToCreate);
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+});
+app.MapGet("/api/comment/{answerId}", async (int answerId) =>
+{
+    List<Comment> comments = await CommentRepository.GetCommentsForAnswerAsync(answerId);
+});
+app.MapPut("/api/update-comment", async (Comment comment) =>
+{
+    bool Successful = await CommentRepository.UpdateCommentAsync(comment);
+    if (Successful)
+    {
+        return Results.Ok("Update Successful");
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+});
+
 
 app.Run();
 
