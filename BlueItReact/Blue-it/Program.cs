@@ -56,8 +56,67 @@ app.MapPut("/api/update-question", async (Question question) =>
         return Results.BadRequest();
     }
 });
-
-    
+app.MapGet("/api/answers/{questionId}", async (int questionId) => await AnswerRepository.GetAnswersForQuestionAsync(questionId));
+app.MapPost("/api/add-new-answer", async (Answer answerToCreate) =>
+{
+    bool Successful = await AnswerRepository.AddNewAnswerAsync(answerToCreate);
+    if (Successful)
+    {
+        return Results.Ok(answerToCreate);
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+});
+app.MapPut("/api/update-answer", async (Answer answer) =>
+{
+    bool Successful = await AnswerRepository.UpdateAnswerAsync(answer);
+    if (Successful)
+    {
+        return Results.Ok("Update Successful");
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+});
+app.MapDelete("/api/delete-question/{questionId}", async (int questionId) =>
+{
+    bool Successful = await QuestionRepository.DeleteQuestionAsync(questionId);
+    if (Successful)
+    {
+        return Results.Ok("Delete Successful");
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+});
+app.MapDelete("/api/delete-answer/{answerId}", async (int answerId) =>
+{
+    bool Successful = await AnswerRepository.DeleteAnswerAsync(answerId);
+    if (Successful)
+    {
+        return Results.Ok("Delete Successful");
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+});
+app.MapDelete("/api/delete-comment/{commentId}", async (int commentId) =>
+{
+    bool Successful = await CommentRepository.DeleteCommentAsync(commentId);
+    if (Successful)
+    {
+        return Results.Ok("Delete Successful");
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+});
 
 app.Run();
 
