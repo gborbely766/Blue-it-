@@ -48,5 +48,21 @@ namespace Blue_it.Data
                 }
             }
         }
+        public async static Task<bool> DeleteQuestionAsync(int questionId)
+        {
+            using (var db = new AppDbContext())
+            {
+                try
+                {
+                    var questionToDelete = db.Questions.FirstOrDefaultAsync(question => question.Id == questionId);
+                    db.Remove(questionToDelete);
+                    return await db.SaveChangesAsync() >= 1;
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Blue_it.Data
 {
@@ -9,6 +10,7 @@ namespace Blue_it.Data
         [Required]
         public string? Message { get; set; }
         public int VoteNumber { get; set; }
+        [ForeignKey("Questions")]
         public int QuestionId { get; set; }
         public DateTime SubmissionTime { get; set; } = DateTime.Now;
         public string? Image { get; set; }
