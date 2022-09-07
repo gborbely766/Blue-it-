@@ -1,0 +1,7 @@
+C:\Users\gborbely\source\repos\Blue-it\BlueItReact\Blue-it\obj\Debug\net6.0\Blue-it.csproj.AssemblyReference.cache
+C:\Users\gborbely\source\repos\Blue-it\BlueItReact\Blue-it\obj\Debug\net6.0\Blue-it.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gborbely\source\repos\Blue-it\BlueItReact\Blue-it\obj\Debug\net6.0\Blue-it.AssemblyInfoInputs.cache
+C:\Users\gborbely\source\repos\Blue-it\BlueItReact\Blue-it\obj\Debug\net6.0\Blue-it.AssemblyInfo.cs
+C:\Users\gborbely\source\repos\Blue-it\BlueItReact\Blue-it\obj\Debug\net6.0\Blue-it.csproj.CoreCompileInputs.cache
+C:\Users\gborbely\source\repos\Blue-it\BlueItReact\Blue-it\obj\Debug\net6.0\Blue-it.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\gborbely\source\repos\Blue-it\BlueItReact\Blue-it\obj\Debug\net6.0\Blue-it.MvcApplicationPartsAssemblyInfo.cache
