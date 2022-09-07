@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "8epA9/jy9Y9Ey83uFdufTrs82ZSkGldrbU/vBStvve4WCLfJ3Z1GtMjd1Kp06xeaoDz7X5MtSmnUqBApgCpGlw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gborbely\\source\\repos\\Blue-it\\BlueItReact\\Blue-it\\Blue-it.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gborbely\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\gborbely\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\gborbely\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\gborbely\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\gborbely\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\gborbely\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
