@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blue_it.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220907120515_SecondMigration")]
-    partial class SecondMigration
+    [Migration("20220909075902_FirstMigration")]
+    partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -79,6 +79,10 @@ namespace Blue_it.Data.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("SubmissionTime")
                         .HasColumnType("TEXT");
 
@@ -95,6 +99,18 @@ namespace Blue_it.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Questions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Image = "This will be a path to an image for Question Nr.1",
+                            Message = "This is message for Question Nr.1",
+                            SubmissionTime = new DateTime(2022, 9, 9, 9, 59, 2, 643, DateTimeKind.Local).AddTicks(4401),
+                            Title = "This is Question nr.1",
+                            ViewNumber = 0,
+                            VoteNumber = 0
+                        });
                 });
 #pragma warning restore 612, 618
         }

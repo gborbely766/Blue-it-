@@ -7,7 +7,6 @@ namespace Blue_it.Data
     {
         [Key]       
         public int Id { get; set; }
-        [ForeignKey("Answers")]
         public int AnswerId { get; set; }
         [Required]
         public string? Message { get; set; }

@@ -49,6 +49,7 @@ namespace Blue_it.Data.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Title = table.Column<string>(type: "TEXT", nullable: false),
+                    Message = table.Column<string>(type: "TEXT", nullable: false),
                     ViewNumber = table.Column<int>(type: "INTEGER", nullable: false),
                     VoteNumber = table.Column<int>(type: "INTEGER", nullable: false),
                     SubmissionTime = table.Column<DateTime>(type: "TEXT", nullable: false),
@@ -58,6 +59,11 @@ namespace Blue_it.Data.Migrations
                 {
                     table.PrimaryKey("PK_Questions", x => x.Id);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Questions",
+                columns: new[] { "Id", "Image", "Message", "SubmissionTime", "Title", "ViewNumber", "VoteNumber" },
+                values: new object[] { 1, "This will be a path to an image for Question Nr.1", "This is message for Question Nr.1", new DateTime(2022, 9, 9, 9, 59, 2, 643, DateTimeKind.Local).AddTicks(4401), "This is Question nr.1", 0, 0 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
